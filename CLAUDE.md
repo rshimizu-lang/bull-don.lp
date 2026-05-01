@@ -1,3 +1,11 @@
+---
+layer: operations
+revision_policy:
+  frequency: as_needed
+  authority: claude_with_fact_check
+last_reviewed: 2026-05-01
+---
+
 # bull-don.lp
 
 ## このリポジトリについて
