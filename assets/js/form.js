@@ -14,6 +14,22 @@ if (leadIdInput) {
   }
 }
 
+// ─── ?src= から流入チャネル受信 ───────────────────────
+// チラシQR等のキャンペーン流入元（例: post_omiya_202607）を捕捉。
+// 判別ロジック本体（EMAIL/CAMPAIGN/ORGANIC）はGAS側②。LPは src 値を渡すのみ。
+const src = new URLSearchParams(window.location.search).get('src') || '';
+
+// ─── GA4：流入チャネル別イベント（訪問の可視化） ──────
+// <head> のGA4スニペットで gtag が定義済み（form.js は body末尾で後に読まれる）。
+if (typeof gtag === 'function') {
+  if (src) {
+    gtag('event', 'campaign_visit', { campaign_id: src });   // チラシ等キャンペーン経由
+  } else if (leadIdInput && leadIdInput.value) {
+    gtag('event', 'email_visit');                            // 営業メール（lid）経由
+  }
+  // 上記いずれでもなければオーガニック（page_view のみ）
+}
+
 // ─── フォーム送信 ────────────────────────────────────
 const form      = document.getElementById('requestForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -48,7 +64,7 @@ if (form) {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ company, name, email, plan, areas, lead_id }),
+        body: JSON.stringify({ company, name, email, plan, areas, lead_id, src }),
       });
       form.style.display = 'none';
       formSuccess.style.display = 'block';
