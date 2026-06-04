@@ -1,6 +1,6 @@
 // ─── GAS エンドポイント ───────────────────────────────
-// Phase D-4-β: 営業エンジン dev URL に切替。本番切替は Phase D-4-δ で実施。
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbys570cuMyrN26KstaUvY9J_1lrWS1C_S3G9XTSlAgmae2bn14w_UQIykyd7Hcg-Hx2Jg/exec';
+// Phase D-4-δ: 本番デプロイへ切替（カットオーバー）。
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxl1CXhgz3ayB6MSelx0y1R7SWVD1GZMmQvQTQDn4lWs31iQc-yoxgAUuqC1BC9csq4vQ/exec';
 
 // ─── ?lid= から lead_id 受信 ─────────────────────────
 // 営業メール経由訪問者の lead_id を hidden field に自動セット
