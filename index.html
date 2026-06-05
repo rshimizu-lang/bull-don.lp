@@ -197,7 +197,7 @@
         </div>
       </div>
       <div class="proof-trial">
-        <p class="proof-trial-note">※ 出欠管理工数削減率。部員30名・月4回開催の場合の試算（自社「サムライシモンズ」実運用データより）</p>
+        <p class="proof-trial-note">※ 部員30名・月4回開催のモデルケース試算（月540分→約40分）。サムライシモンズ（112名）で実運用中。</p>
         <div class="proof-trial-table">
           <div class="proof-trial-row proof-trial-header">
             <div class="proof-trial-cell">自動化される主な作業</div>
@@ -287,8 +287,8 @@
     <div class="container">
       <p class="eyebrow cta-final-eyebrow">資料請求</p>
       <h2 class="cta-final-h2">詳細資料を<br>無料でお送りします。</h2>
-      <p class="cta-final-sub">導入事例・機能詳細・料金プランを掲載。</p>
-      <div class="monitor-badge">モニター企業募集中 — 先着3社・7月末まで・導入費用無償</div>
+      <p class="cta-final-sub">実運用事例・機能詳細・料金プランを掲載。</p>
+      <div class="monitor-badge">モニター企業募集中 — 2026年7月末まで・先着3社・初期費用＋月額6ヶ月無償</div>
       <form class="form" id="requestForm">
         <div class="form-group">
           <label class="form-label" for="company">会社名 <span class="required">*</span></label>
@@ -334,6 +334,11 @@
           </div>
         </div>
         <input type="hidden" id="lead_id" name="lead_id" value="">
+        <!-- ハニーポット: 人間には不可視。bot が値を入れると GAS 側で却下（fail-closed）。 -->
+        <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+          <label for="contact_url">この欄は入力しないでください</label>
+          <input type="text" id="contact_url" name="contact_url" tabindex="-1" autocomplete="off" value="">
+        </div>
         <button class="btn-submit" type="submit" id="submitBtn">資料を無料で受け取る</button>
         <p class="form-privacy">ご入力いただいた情報は、資料送付および弊社サービスに関するご案内に利用します。<a href="privacy.html" class="privacy-link">プライバシーポリシー</a></p>
       </form>

@@ -2,6 +2,12 @@
 // Phase D-4-δ: 本番デプロイへ切替（カットオーバー）。
 const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxl1CXhgz3ayB6MSelx0y1R7SWVD1GZMmQvQTQDn4lWs31iQc-yoxgAUuqC1BC9csq4vQ/exec';
 
+// ─── 受付ハードニング用トークン（lp-4） ───────────────
+// 全 POST に form_token を常時付与し、GAS 側 Script Property LP_FORM_TOKEN と
+// 一致しない送信を fail-closed で却下する（素朴な bot / 直叩き curl 対策）。
+// 公開ファイルに載るため機密ではない。値を変える際は GAS 側プロパティも同時更新すること。
+const FORM_TOKEN = 'b01ed040da3104a983b51bfd7a19457dc0d7d143654f1402318d4269101dcea1';
+
 // ─── ?lid= から lead_id 受信 ─────────────────────────
 // 営業メール経由訪問者の lead_id を hidden field に自動セット
 // UI 上の可視サインは出さない（清水判断）
@@ -46,6 +52,9 @@ if (form) {
       document.querySelectorAll('input[name="areas"]:checked')
     ).map(el => el.value);
     const lead_id = leadIdInput ? leadIdInput.value : '';
+    // ハニーポット値（人間は空のまま。bot が入れると GAS 側で却下）。
+    const hpInput = document.getElementById('contact_url');
+    const hp      = hpInput ? hpInput.value : '';
 
     if (!company || !name || !email) {
       alert('会社名・氏名・メールアドレスは必須です。');
@@ -64,7 +73,7 @@ if (form) {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ company, name, email, plan, areas, lead_id, src }),
+        body: JSON.stringify({ company, name, email, plan, areas, lead_id, src, form_token: FORM_TOKEN, hp }),
       });
       form.style.display = 'none';
       formSuccess.style.display = 'block';
