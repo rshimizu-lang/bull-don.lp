@@ -27,3 +27,8 @@ GitHub Pagesで lp.bull-don.com に公開中。
 - 詳細仕様: `../_shared/`
 - 資料請求フォームのバックエンドGAS: `../bull-don.lp-backend/`（rshimizu-lang/bull-don.lp-backend）
   - `assets/js/form.js` の `GAS_ENDPOINT` がそのWebアプリのデプロイURL
+
+## 上位ルール
+
+ワークスペース `../.claude/rules/`（bulldon-workspace）を継承（commit-style / _meta-rules / brand-design）。
+GAS リポジトリではないため `gas-architecture.md` / `b-pass-design.md` は対象外。全体の正本は `../AGENTS.md`。
