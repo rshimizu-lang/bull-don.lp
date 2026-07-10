@@ -6,6 +6,11 @@
 ブルドン合同会社のLP（ランディングページ）。
 GitHub Pagesで lp.bull-don.com に公開中。
 
+**publicリポジトリ**（GitHub Pages・履歴含め全公開）。
+置いてよいもの＝LP公開物のみ。置いてはいけないもの＝内部文書・顧客情報・本物の機密。
+
+FORM_TOKENは公開前提のbot対策トークン（機密ではない）。値変更時は受信側GASのScriptPropertyも同時更新すること。
+
 ## 技術スタック
 - 静的HTML/CSS/JS
 - GitHub Pages（CNAME: lp.bull-don.com）
@@ -24,9 +29,8 @@ GitHub Pagesで lp.bull-don.com に公開中。
 
 ## 関連
 
-- 詳細仕様: `../_shared/`
-- 資料請求フォームのバックエンドGAS: `../bull-don.lp-backend/`（rshimizu-lang/bull-don.lp-backend）
-  - `assets/js/form.js` の `GAS_ENDPOINT` がそのWebアプリのデプロイURL
+- 資料請求フォームの送信先（Production デプロイURL）は `assets/js/form.js` の `GAS_ENDPOINT` を参照。現在の受け口は別プロジェクトへ移管済み（詳細は private リポ側のガバナンス文書を参照）。
+  - 旧受け口: `../bull-don.lp-backend/`（rshimizu-lang/bull-don.lp-backend）・2026-06-04停止
 
 ## 上位ルール
 
