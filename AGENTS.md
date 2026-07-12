@@ -6,8 +6,7 @@
 ブルドン合同会社のLP（ランディングページ）。
 GitHub Pagesで lp.bull-don.com に公開中。
 
-**publicリポジトリ**（GitHub Pages・履歴含め全公開）。
-置いてよいもの＝LP公開物のみ。置いてはいけないもの＝内部文書・顧客情報・本物の機密。
+**publicリポジトリ**（GitHub Pages・履歴含め全公開）。禁止物は法律層 `../.claude/rules/public-repo-guard.md` を正本とする。
 
 FORM_TOKENは公開前提のbot対策トークン（機密ではない）。値変更時は受信側GASのScriptPropertyも同時更新すること。
 
@@ -34,5 +33,5 @@ FORM_TOKENは公開前提のbot対策トークン（機密ではない）。値�
 
 ## 上位ルール
 
-ワークスペース `../.claude/rules/`（bulldon-workspace）を継承（commit-style / _meta-rules / brand-design）。
+ワークスペース `../.claude/rules/`（bulldon-workspace）を継承（commit-style / _meta-rules / brand-design / public-repo-guard）。
 GAS リポジトリではないため `gas-architecture.md` / `b-pass-design.md` は対象外。全体の正本は `../AGENTS.md`。
