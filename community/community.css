@@ -1,6 +1,5 @@
 /* ═══ B-PASS COMMUNITY 固有スタイル ═══
-   ../assets/css/style.css の後に読み込む。色は style.css の CSS 変数を参照する。
-   例外：Orange（--cm-orange）は 05 Case Study（.cm-case）内でのみ定義・使用する。 */
+   ../assets/css/style.css の後に読み込む。色は style.css の CSS 変数（B-PASS カラー）のみを参照する。 */
 
 /* ─── 共通：見出し・本文 ─── */
 /* 明るい背景の eyebrow は Gold 文字だとコントラスト 4.5:1 に届かないため、
@@ -64,23 +63,13 @@
   gap: 14px; align-items: start;
 }
 .cm-feat-card { padding: 24px 22px; }
-.cm-feat-img {
-  margin-top: 16px;
-  background: var(--off-white);
-  border-radius: var(--radius-md);
-  padding: 12px;
-}
-.cm-feat-img img { width: 100%; height: auto; display: block; margin: 0 auto; }
-.cm-feat-img--phone img { max-width: 180px; }
 
-/* ─── 05 CASE STUDY（Orange はこのセクション内のみ） ─── */
+/* ─── 05 CASE STUDY ─── */
 .cm-case {
-  --cm-orange: #F97316;
   padding: 88px 0;
   background: var(--white);
-  border-top: 4px solid var(--cm-orange);
+  border-top: 4px solid var(--gold);
 }
-.cm-case .eyebrow::before { background: var(--cm-orange); }
 .cm-case-photo { margin-top: 0; margin-bottom: 24px; }
 .cm-case-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -90,12 +79,12 @@
 .cm-case-stat {
   background: var(--navy);
   padding: 24px 12px; text-align: center;
-  border-bottom: 3px solid var(--cm-orange);
+  border-bottom: 3px solid var(--gold);
 }
 .cm-case-num {
   font-family: var(--font-display);
   font-size: 30px; font-weight: 600;
-  color: var(--cm-orange);
+  color: var(--gold);
   line-height: 1.2; margin-bottom: 6px;
 }
 .cm-case-label { font-size: 12px; color: color-mix(in srgb, var(--white) 80%, transparent); }
@@ -231,6 +220,8 @@
 .cm-footer-company { font-size: 12px; color: color-mix(in srgb, var(--white) 80%, transparent); margin-bottom: 4px; }
 .cm-footer-address { font-size: 11px; color: color-mix(in srgb, var(--white) 70%, transparent); line-height: 1.7; }
 .cm-footer-nav a { color: color-mix(in srgb, var(--white) 75%, transparent); }
+.cm-footer-mail { color: color-mix(in srgb, var(--white) 75%, transparent); text-decoration: none; }
+.cm-footer-mail:hover { color: var(--white); }
 
 /* ─── RESPONSIVE（既存踏襲：640px / 400px の2段） ─── */
 @media (max-width: 640px) {

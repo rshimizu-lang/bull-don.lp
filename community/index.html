@@ -6,6 +6,9 @@
   <!-- Google Analytics 4（法人版 index.html と同一方式・同一プロパティ。page_path /community/ で分離） -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHDT93RZH"></script>
   <script>
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      window['ga-disable-G-0CHDT93RZH'] = true;
+    }
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -32,7 +35,7 @@
   <header class="header">
     <div class="header-inner">
       <div class="logo">
-        <img src="../assets/images/logo-transparent.png" alt="B-PASS" class="logo-img">
+        <img src="../assets/images/logo-white.png" alt="B-PASS" class="logo-img">
       </div>
       <a href="#contact" class="header-cta">チームのことを相談する</a>
     </div>
@@ -117,16 +120,10 @@
           <div class="feat-card cm-feat-card reveal reveal-delay-4">
             <h3 class="cm-card-title">LINE配信とリマインド</h3>
             <p class="cm-card-body">開催案内を一斉配信できます。参加者だけ、未回答の方だけといった絞り込み配信や、前日の自動リマインドにも対応します。</p>
-            <div class="cm-feat-img cm-feat-img--phone">
-              <img src="../assets/images/screen-line.png" alt="LINEでの予約状況の表示とメニュー画面" width="400" height="700" loading="lazy">
-            </div>
           </div>
           <div class="feat-card cm-feat-card reveal reveal-delay-5">
             <h3 class="cm-card-title">出欠集計と参加スタッツ</h3>
             <p class="cm-card-body">誰が何回参加したかが自動で集計されます。常連の方の把握にも、久しぶりの方への声かけにも使えます。</p>
-            <div class="cm-feat-img">
-              <img src="../assets/images/screen-sheet.png" alt="スプレッドシートのメンバーリスト画面" width="1200" height="500" loading="lazy">
-            </div>
           </div>
           <div class="feat-card cm-feat-card reveal reveal-delay-6">
             <h3 class="cm-card-title">規約同意の記録</h3>
@@ -136,7 +133,7 @@
       </div>
     </section>
 
-    <!-- 05 CASE STUDY（Orange はこのセクション内のみ） -->
+    <!-- 05 CASE STUDY -->
     <section class="cm-case">
       <div class="container">
         <p class="eyebrow">導入事例</p>
@@ -244,7 +241,7 @@
             <li>メールでのお問い合わせ対応</li>
             <li>システムの保守・障害対応</li>
           </ul>
-          <p class="cm-price-note">ご利用開始月の月額料金は無料です。無料期間中に解約された場合、料金は一切発生しません。表示価格は税別です。LINE公式アカウントのご契約料金は含まれません。</p>
+          <p class="cm-price-note">ご利用開始日から1か月間、月額利用料は無料です。無料期間中に解約された場合、料金は一切発生しません。表示価格は税別です。LINE公式アカウントのご契約料金は含まれません。</p>
         </div>
       </div>
     </section>
@@ -279,13 +276,15 @@
       </div>
     </section>
 
-    <!-- 09 FAQ（5章に eyebrow・sec-title の指定がないため見出しを置かない） -->
+    <!-- 09 FAQ（eyebrow・sec-title は v6-A 3-3） -->
     <section class="faq cm-faq">
       <div class="container">
+        <p class="eyebrow">よくある質問</p>
+        <h2 class="sec-title reveal">導入前に、よく聞かれること。</h2>
         <div class="faq-list">
           <div class="faq-item">
             <p class="faq-q">初月無料とは、どこまで無料ですか。</p>
-            <p class="faq-a">ご利用開始月の月額料金が無料になります。環境構築も含めて費用は発生しません。無料期間中に解約された場合も料金はかかりません。</p>
+            <p class="faq-a">ご利用開始日から1か月間、月額利用料が無料になります。環境構築も含めて費用は発生しません。無料期間中に解約された場合も料金はかかりません。</p>
           </div>
           <div class="faq-item">
             <p class="faq-q">バスケットボール以外の競技でも使えますか。</p>
@@ -347,7 +346,7 @@
           <p>お問い合わせありがとうございます。担当者より3営業日以内にご連絡いたします。</p>
         </div>
         <div class="cm-form-status" id="cmPending" role="alert" hidden>
-          <p>申し訳ありません。現在フォームを準備中です。お手数ですがメールにてお問い合わせください。</p>
+          <p>申し訳ありません。送信できませんでした。お手数ですが info@bull-don.com までメールにてお問い合わせください。</p>
         </div>
       </div>
     </section>
@@ -361,11 +360,13 @@
         <img src="../assets/images/logo-white.png" alt="B-PASS" class="footer-logo-img cm-footer-logo">
         <p class="footer-company cm-footer-company">ブルドン合同会社</p>
         <p class="cm-footer-address">〒187-0004 東京都小平市天神町1丁目4番38号-2</p>
+        <p class="cm-footer-address"><a class="cm-footer-mail" href="mailto:info@bull-don.com">info@bull-don.com</a></p>
       </div>
       <nav class="footer-nav cm-footer-nav" aria-label="フッター">
         <a href="https://lp.bull-don.com/">法人向けB-PASS</a>
         <a href="https://www.bull-don.com/" target="_blank" rel="noopener">会社概要</a>
         <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="https://www.bull-don.com/scta#community" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
       </nav>
     </div>
   </footer>
