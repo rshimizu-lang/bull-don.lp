@@ -1,7 +1,7 @@
 // ─── COMMUNITY フォームの送信先 ───────────────────────
-// COMMUNITY 専用の軽量 doPost（別リポ・未実装）。差し替えはこの1行のみで完結する。
+// COMMUNITY 専用の軽量 doPost。差し替えはこの1行のみで完結する。
 // 'PENDING_DEPLOYMENT' の間は送信せず、メールでの問い合わせ案内を表示する。
-const COMMUNITY_FORM_ENDPOINT = 'PENDING_DEPLOYMENT'; // TODO: バックエンド構築後に差し替え
+const COMMUNITY_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx5WiXv6qiS-26p1Sx55eH2v5JQ8j4cu5JfIPKNUTlNy4cd-Rpnam8X3m59h-KhK8b0uw/exec';
 
 // 法人版の送信機構（../assets/js/form.js）は #requestForm 等の id にのみ結び付いている。
 // 本ページはそれらの id を持たないため、form.js はここでは送信を行わない（reveal・Ripple のみ働く）。
