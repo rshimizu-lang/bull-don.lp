@@ -1,377 +1,492 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Analytics 4（法人版 index.html と同一方式・同一プロパティ。page_path /community/ で分離） -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHDT93RZH"></script>
-  <script>
-    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-      window['ga-disable-G-0CHDT93RZH'] = true;
-    }
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0CHDT93RZH');
-  </script>
-  <title>B-PASS COMMUNITY — 小規模チーム向けプラン | Bulldon LLC</title>
-  <meta name="description" content="練習の告知から当日の受付まで、運営者の手作業をなくします。バスケットボールのチーム・サークル向けのプランです。">
-  <link rel="canonical" href="https://lp.bull-don.com/community/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="B-PASS COMMUNITY — 小規模チーム向けプラン">
-  <meta property="og:description" content="練習の告知から当日の受付まで、運営者の手作業をなくします。バスケットボールのチーム・サークル向けのプランです。">
-  <meta property="og:url" content="https://lp.bull-don.com/community/">
-  <meta property="og:image" content="https://lp.bull-don.com/assets/images/photo-samurai.jpg">
-  <meta property="og:locale" content="ja_JP">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./community.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B-PASS COMMUNITY｜バスケットボールのチーム運営をLINEで自動化</title>
+<meta name="description" content="出欠、繰り上げ連絡、当日の受付まで。バスケットボールのチーム・サークル向け運営システム。初期費用0円、初月0円、月額5,500円（税込）。先着5チーム限定でご提供中。">
+<link rel="canonical" href="https://lp.bull-don.com/community/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="B-PASS COMMUNITY">
+<meta property="og:title" content="B-PASS COMMUNITY｜バスケットボールのチーム運営をLINEで自動化">
+<meta property="og:description" content="出欠、繰り上げ連絡、当日の受付まで。初期費用0円、初月0円、月額5,500円（税込）。">
+<meta property="og:url" content="https://lp.bull-don.com/community/">
+<meta property="og:image" content="https://lp.bull-don.com/community/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#20493E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Yusei+Magic&amp;family=Zen+Kaku+Gothic+New:wght@500;700;900&amp;display=swap">
+<!-- Google Analytics 4（法人版と同じプロパティ。localhost・127.0.0.1 では計測しない） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHDT93RZH"></script>
+<script>
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  window['ga-disable-G-0CHDT93RZH'] = true;
+}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-0CHDT93RZH');
+</script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F7F4EC;color:#1C1C1A;font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:500;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:#20493E}a:hover{color:#3F6B5F}
+:focus-visible{outline:3px solid #20493E;outline-offset:3px}
+.on-dark :focus-visible{outline-color:#C5A55A}
+.hand{font-family:"Yusei Magic","Hiragino Maru Gothic ProN","Zen Kaku Gothic New",sans-serif;font-weight:400}
+.num{font-family:"Barlow Condensed","Oswald","Zen Kaku Gothic New",sans-serif;font-weight:700;line-height:1}
+.wrap{max-width:1080px;margin:0 auto;padding-left:clamp(20px,4vw,40px);padding-right:clamp(20px,4vw,40px)}
+.ib{display:inline-block}
+.dots{-webkit-text-emphasis:filled dot #C5A55A;text-emphasis:filled dot #C5A55A}
+table{border-collapse:collapse;width:100%}
+.cmp th,.cmp td{padding:14px 12px;border-bottom:1px solid #C9C5B8;text-align:center;vertical-align:middle;font-size:15px;line-height:1.55}
+.cmp tbody th{text-align:left;font-weight:700}
+.cmp .old{background:#E9E8E2;color:#3A3A37}
+.cmp .new{background:#EFE7D2;font-weight:700}
+.cmp .key{box-shadow:inset 0 0 0 3px #C5A55A;font-weight:900}
+.ph{display:flex;align-items:center;justify-content:center;text-align:center;background:repeating-linear-gradient(135deg,#E3E1DA 0 10px,#EEECE6 10px 20px);border:1.5px dashed #5C5C57;color:#3A3A37;font-size:13px;line-height:1.5;padding:12px}
+.field{display:block;width:100%;min-height:48px;padding:10px 12px;border:1.5px solid #1C1C1A;border-radius:2px;background:#fff;font:inherit;color:#1C1C1A}
+.eq{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:34px}
+.eqp{flex:1 1 230px;min-width:0;background:#fff;border:2px solid #1C1C1A}
+@media (max-width:820px){.eq{flex-direction:column;align-items:stretch}.eq>span{align-self:center}.eqp{flex:0 0 auto}}
+@media (max-width:560px){.cmp th,.cmp td{padding:12px 7px;font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
 </head>
-<body class="cm">
+<body>
+<div style="width:100%;overflow-x:hidden">
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo">
-        <img src="../assets/images/logo-white.png" alt="B-PASS" class="logo-img">
-      </div>
-      <a href="#contact" class="header-cta">チームのことを相談する</a>
-    </div>
-  </header>
+<header class="on-dark" style="background:#20493E">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:12px;padding-bottom:6px">
+<img src="assets/logo-community.png" width="919" height="264" alt="B-PASS Community" style="display:block;height:54px;width:auto">
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1.5px solid #fff;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-radius:3px">相談する</a>
+</div>
+</header>
 
-  <main>
+<section class="on-dark" style="background:#20493E;color:#fff">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:28px 48px;padding-top:clamp(36px,6vw,72px);padding-bottom:clamp(36px,5vw,60px)">
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:22px">
+<p style="background:#fff;border:2px solid #A8322D;padding:4px;transform:rotate(-2deg)"><span style="display:block;border-top:2px dotted #A8322D;border-bottom:2px dotted #A8322D;padding:3px 14px;color:#A8322D;font-weight:900;font-size:15px;line-height:1.6">先着5チーム限定でご提供中</span></p>
+<div style="transform:rotate(-3deg);transform-origin:left bottom;margin-top:10px;max-width:100%">
+<p class="hand" style="font-size:clamp(23px,3vw,35px);line-height:1.35"><span class="ib">主催者も、</span><span class="ib">ちゃんとバスケしよう。</span></p>
+<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:12px;margin-top:4px"><path d="M3 8 C60 2 118 12 178 6 S268 4 297 9" fill="none" stroke="#E8D5A3" stroke-width="3" stroke-linecap="round"></path></svg>
+</div>
+<h1 style="font-weight:900;font-size:clamp(25px,3.7vw,42px);line-height:1.5;letter-spacing:.01em"><span class="ib">出欠も、</span><span class="ib">繰り上げ連絡も、</span><span class="ib">当日の受付も。</span><br><span class="ib">LINEが<span class="dots">代わりに</span>やります。</span></h1>
+<p style="max-width:33em;color:#E6EEEA">バスケットボールのチーム・サークル向けの運営システム、B-PASS COMMUNITY。練習の告知から当日の受付まで、主催者の手作業を引き受けます。</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:4px">
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:56px;padding:0 30px;background:#C5A55A;color:#1C1C1A;font-weight:900;font-size:17px;text-decoration:none;border:2px solid #1C1C1A;border-radius:3px;box-shadow:3px 3px 0 #1C1C1A">チームのことを相談する</a>
+<a href="#price" style="display:inline-flex;align-items:center;min-height:44px;color:#fff;font-weight:700;font-size:15px;text-underline-offset:5px">料金を先に見る</a>
+</div>
+</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;justify-content:center">
+<svg viewBox="0 0 520 440" role="img" aria-label="LINEに会員証とメニューを表示したスマートフォンと、バスケットボールのイラスト" style="display:block;width:100%;max-width:470px;height:auto">
+<ellipse cx="275" cy="418" rx="215" ry="13" fill="#15332B"></ellipse>
+<circle cx="392" cy="300" r="106" fill="#C5A55A" stroke="#1C1C1A" stroke-width="3"></circle>
+<path d="M392 194 V406" fill="none" stroke="#1C1C1A" stroke-width="3"></path>
+<path d="M286 300 H498" fill="none" stroke="#1C1C1A" stroke-width="3"></path>
+<path d="M320 222 C358 262 358 338 320 378" fill="none" stroke="#1C1C1A" stroke-width="3" stroke-linecap="round"></path>
+<path d="M464 222 C426 262 426 338 464 378" fill="none" stroke="#1C1C1A" stroke-width="3" stroke-linecap="round"></path>
+<g transform="rotate(-8 190 220)">
+<rect x="82" y="22" width="216" height="394" rx="30" fill="#1C1C1A"></rect>
+<rect x="94" y="36" width="192" height="366" rx="18" fill="#F7F4EC"></rect>
+<path d="M94 72 V54 A18 18 0 0 1 112 36 H268 A18 18 0 0 1 286 54 V72 Z" fill="#7FA39C"></path>
+<path d="M108 49 L103 55 L108 61" fill="none" stroke="#1C1C1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<text x="116" y="59" font-size="11" font-weight="700" fill="#1C1C1A">B-PASS</text>
+<rect x="226" y="80" width="52" height="18" rx="9" fill="#C5A55A"></rect>
+<text x="252" y="92.5" text-anchor="middle" font-size="9" font-weight="700" fill="#1C1C1A">会員証</text>
+<rect x="104" y="106" width="174" height="90" rx="8" fill="#fff" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<text x="191" y="120" text-anchor="middle" font-size="7" font-weight="700" letter-spacing=".5" fill="#20493E">B-PASS MEMBER PASSPORT</text>
+<path d="M112 125 H270" stroke="#C9C5B8" stroke-width="1"></path>
+<g transform="translate(112 132) scale(0.54) translate(-140 -142)"><rect x="140" y="142" width="100" height="100" fill="#fff"></rect><path d="M146 148h26v26h-26z M208 148h26v26h-26z M146 210h26v26h-26z" fill="#1C1C1A"></path><path d="M150 152h18v18h-18z M212 152h18v18h-18z M150 214h18v18h-18z" fill="#fff"></path><path d="M154 156h10v10h-10z M216 156h10v10h-10z M154 218h10v10h-10z" fill="#1C1C1A"></path><path d="M180 148h6v6h-6z M192 154h6v6h-6z M180 166h12v6h-12z M198 166h6v6h-6z M146 182h6v6h-6z M158 182h12v6h-12z M176 180h6v12h-6z M188 184h12v6h-12z M206 180h6v6h-6z M218 182h16v6h-16z M182 198h6v6h-6z M194 196h12v6h-12z M212 194h6v12h-6z M226 198h8v6h-8z M180 212h12v6h-12z M198 210h6v12h-6z M210 212h10v6h-10z M226 212h8v8h-8z M182 226h8v8h-8z M196 228h12v6h-12z M214 224h6v10h-6z M226 226h8v8h-8z" fill="#1C1C1A"></path></g>
+<text x="172" y="140" font-size="6" fill="#5C5C57">NAME</text>
+<text x="172" y="152" font-size="10" font-weight="700" fill="#1C1C1A">田中太郎</text>
+<text x="172" y="164" font-size="6" fill="#5C5C57">ID</text>
+<text x="172" y="176" font-size="10" font-weight="700" fill="#9E843F">U123456</text>
+<text x="191" y="190" text-anchor="middle" font-size="6" fill="#5C5C57">受付でこの画面をご提示ください</text>
+<rect x="94" y="296" width="192" height="98" fill="#F7F4EC"></rect>
+<rect x="96" y="300" width="61" height="44" fill="#20493E" stroke="#1C1C1A" stroke-width="1.5"></rect><rect x="118.5" y="310" width="16" height="14" rx="2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M118.5 315H134.5M122.5 308V312M130.5 308V312" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><text x="126.5" y="338" text-anchor="middle" font-size="7" font-weight="700" fill="#fff">参加申込</text><rect x="159" y="300" width="61" height="44" fill="#C5A55A" stroke="#1C1C1A" stroke-width="1.5"></rect><path d="M182.5 310L196.5 324M196.5 310L182.5 324" fill="none" stroke="#1C1C1A" stroke-width="2.4" stroke-linecap="round"></path><text x="189.5" y="338" text-anchor="middle" font-size="7" font-weight="700" fill="#1C1C1A">キャンセル</text><rect x="222" y="300" width="61" height="44" fill="#7FA39C" stroke="#1C1C1A" stroke-width="1.5"></rect><circle cx="252.5" cy="314" r="4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M245.5 325C245.5 319 259.5 319 259.5 325Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><text x="252.5" y="338" text-anchor="middle" font-size="7" font-weight="700" fill="#fff">予約状況</text><rect x="96" y="346" width="61" height="44" fill="#C5A55A" stroke="#1C1C1A" stroke-width="1.5"></rect><rect x="117.5" y="357" width="18" height="12" rx="2" fill="none" stroke="#1C1C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></rect><circle cx="122.5" cy="362" r="2" fill="#1C1C1A"></circle><path d="M127.5 361H132.5M127.5 365H132.5" fill="none" stroke="#1C1C1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><text x="126.5" y="384" text-anchor="middle" font-size="7" font-weight="700" fill="#1C1C1A">会員証</text><rect x="159" y="346" width="61" height="44" fill="#20493E" stroke="#1C1C1A" stroke-width="1.5"></rect><path d="M180.5 357H194.5V366H185.5L181.5 370V366H180.5Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M188.5 354H198.5V362" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><text x="189.5" y="384" text-anchor="middle" font-size="6" font-weight="700" fill="#fff">オープンチャット</text><rect x="222" y="346" width="61" height="44" fill="#7FA39C" stroke="#1C1C1A" stroke-width="1.5"></rect><circle cx="251.5" cy="362" r="6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M255.5 366L260.5 371" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><text x="252.5" y="384" text-anchor="middle" font-size="7" font-weight="700" fill="#fff">活動履歴</text>
+<path d="M94 392 H286 V384 A18 18 0 0 1 268 402 H112 A18 18 0 0 1 94 384 Z" fill="#F7F4EC"></path>
+<text x="190" y="399" text-anchor="middle" font-size="6.5" fill="#1C1C1A">メニュー ▾</text>
+</g>
+<circle cx="316" cy="92" r="34" fill="#fff" stroke="#1C1C1A" stroke-width="3"></circle>
+<path d="M300 93 L312 105 L333 80" fill="none" stroke="#20493E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M372 46 L386 26 M392 70 L416 60 M356 34 L358 10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"></path>
+</svg>
+</div>
+</div>
+<div style="background:#C5A55A;color:#1C1C1A;border-top:1.5px solid #1C1C1A">
+<dl class="wrap" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:8px clamp(22px,5vw,60px);padding-top:14px;padding-bottom:12px;padding-right:clamp(44px,6vw,60px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px"><dt style="font-weight:700;font-size:14px;line-height:1.4">初期費用</dt><dd><span class="num" style="font-size:44px">0</span><span style="font-weight:900;font-size:17px">円</span></dd></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px"><dt style="font-weight:700;font-size:14px;line-height:1.4">初月</dt><dd><span class="num" style="font-size:44px">0</span><span style="font-weight:900;font-size:17px">円</span></dd></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px"><dt style="font-weight:700;font-size:14px;line-height:1.4">月額</dt><dd style="position:relative"><span class="num" style="font-size:44px">5,500</span><span style="font-weight:900;font-size:17px">円</span><span style="position:absolute;left:100%;bottom:4px;white-space:nowrap;font-weight:700;font-size:13px">（税込）</span></dd></div>
+</dl>
+</div>
+<div aria-hidden="true" style="height:10px;background:linear-gradient(135deg,#C5A55A 25%,transparent 25%) 0 0/16px 10px repeat-x,linear-gradient(225deg,#C5A55A 25%,transparent 25%) 0 0/16px 10px repeat-x,#F7F4EC"></div>
+</section>
 
-    <!-- 01 HERO -->
-    <section class="hero cm-hero">
-      <div class="hero-inner cm-hero-inner">
-        <div class="hero-text">
-          <p class="hero-badge">B-PASS COMMUNITY ／ 小規模チーム向けプラン</p>
-          <h1 class="hero-h1 cm-hero-h1">出欠管理も、繰り上げ連絡も。<br>チーム運営の雑務は、自動でいい。</h1>
-          <p class="hero-sub cm-hero-sub">練習の告知から当日の受付まで、運営者の手作業をなくします。バスケットボールのチーム・サークル向けのプランです。</p>
-          <div class="hero-cta-wrap">
-            <a href="#contact" class="btn-hero">チームのことを相談する</a>
-            <p class="hero-note cm-hero-note">初月無料／月額5,000円（税別）／初期費用なし／先着5チーム</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section style="padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,84px)">
+<div class="wrap">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:34px">
+<div style="flex:1 1 420px;min-width:0">
+<div style="display:inline-block;transform:rotate(-2.5deg);transform-origin:left bottom;max-width:100%">
+<h2 class="hand" style="font-size:clamp(26px,4.3vw,46px);line-height:1.3"><span class="ib">いまの運営と、</span><span class="ib">くらべてください。</span></h2>
+<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:12px;margin-top:4px"><path d="M3 7 C70 12 130 2 190 8 S270 10 297 5" fill="none" stroke="#C5A55A" stroke-width="3.5" stroke-linecap="round"></path></svg>
+</div>
+<p style="margin-top:24px;max-width:35em;color:#3A3A37">LINEグループと手作業で回しているチームが、B-PASS COMMUNITYに替えると変わるところを並べました。</p>
+</div>
+<svg viewBox="0 0 190 190" aria-hidden="true" style="flex:0 0 auto;width:clamp(107px,14.5vw,168px);height:auto;overflow:visible;transform:rotate(6deg)">
+<rect x="16" y="24" width="124" height="158" rx="8" fill="#C5A55A" stroke="#1C1C1A" stroke-width="3"></rect>
+<rect x="29" y="42" width="98" height="128" fill="#fff" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<rect x="55" y="10" width="46" height="28" rx="5" fill="#7FA39C" stroke="#1C1C1A" stroke-width="3"></rect>
+<rect x="40" y="58" width="14" height="14" fill="none" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<rect x="40" y="86" width="14" height="14" fill="none" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<rect x="40" y="114" width="14" height="14" fill="none" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<rect x="40" y="142" width="14" height="14" fill="none" stroke="#1C1C1A" stroke-width="2.5"></rect>
+<path d="M64 65 H116 M64 93 H104 M64 121 H116 M64 149 H96" fill="none" stroke="#1C1C1A" stroke-width="2.5" stroke-linecap="round"></path>
+<path d="M36 124 C70 112 96 132 124 118" fill="none" stroke="#A8322D" stroke-width="3" stroke-linecap="round"></path>
+<path d="M42 64 L47 70 L57 56" fill="none" stroke="#20493E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<g transform="rotate(28 146 96)"><rect x="138" y="40" width="16" height="96" fill="#fff" stroke="#1C1C1A" stroke-width="2.5"></rect><path d="M138 136 L146 156 L154 136 Z" fill="#E8D5A3" stroke="#1C1C1A" stroke-width="2.5" stroke-linejoin="round"></path><rect x="138" y="40" width="16" height="14" fill="#A8322D" stroke="#1C1C1A" stroke-width="2.5"></rect></g>
+</svg>
+</div>
+<div style="overflow-x:auto">
+<table class="cmp" style="min-width:330px">
+<thead>
+<tr>
+<td style="width:25%;border-bottom:1px solid #C9C5B8"></td>
+<th scope="col" style="width:31%;background:#D5D4CE;font-weight:700">いまの運営<br><span style="font-size:12.5px;font-weight:500">LINEグループと手作業</span></th>
+<th scope="col" style="width:44%;background:#20493E;color:#fff;font-weight:900;font-size:16px"><span style="display:block;font-size:12.5px;font-weight:700;color:#E8D5A3">今回のご案内</span>B-PASS COMMUNITY</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">練習の告知</th><td class="old">グループに投稿</td><td class="new"><span class="ib">一斉配信・</span><span class="ib">絞り込み配信</span></td></tr>
+<tr><th scope="row">出欠の確認</th><td class="old"><span class="ib">返信を1件ずつ</span><span class="ib">数える</span></td><td class="new"><span class="ib">ワンタップ申込を</span><span class="ib">自動集計</span></td></tr>
+<tr><th scope="row"><span class="ib">定員と</span><span class="ib">キャンセル待ち</span></th><td class="old"><span class="ib">待機中の人へ</span><span class="ib">手作業で連絡</span></td><td class="new key"><span class="ib">自動で締め切り・</span><span class="ib">自動で繰り上げ</span><span class="hand" style="display:block;font-size:14.5px;font-weight:400;color:#A8322D;margin-top:2px"><span class="ib">主催者は</span><span class="ib">何もしなくていい</span></span></td></tr>
+<tr><th scope="row"><span class="ib">キャンセルの</span><span class="ib">受付</span></th><td class="old"><span class="ib">連絡を受けて</span><span class="ib">名簿から消す</span></td><td class="new"><span class="ib">本人がメニューから</span><span class="ib">理由を選んで完了</span></td></tr>
+<tr><th scope="row"><span class="ib">自分の予約の</span><span class="ib">確認</span></th><td class="old"><span class="ib">主催者に</span><span class="ib">問い合わせ</span></td><td class="new"><span class="ib">参加確定・待ちを</span><span class="ib">本人がいつでも確認</span></td></tr>
+<tr><th scope="row"><span class="ib">前日の</span><span class="ib">リマインド</span></th><td class="old">手で送る</td><td class="new">前日に自動配信</td></tr>
+<tr><th scope="row">当日の受付</th><td class="old">名簿で点呼</td><td class="new key"><span class="ib">会員証のQRを</span><span class="ib">かざすだけ</span></td></tr>
+<tr><th scope="row"><span class="ib">参加履歴と</span><span class="ib">ランク</span></th><td class="old">残らない</td><td class="new"><span class="ib">出席回数から</span><span class="ib">ランクを自動判定</span></td></tr>
+<tr><th scope="row"><span class="ib">メンバー同士の</span><span class="ib">連絡</span></th><td class="old"><span class="ib">グループLINEで</span><span class="ib">名前が見える</span></td><td class="new"><span class="ib">オープンチャットに</span><span class="ib">メニューから参加</span></td></tr>
+<tr><th scope="row"><span class="ib">規約同意の</span><span class="ib">記録</span></th><td class="old">—</td><td class="new"><span class="ib">申込時に取得して</span><span class="ib">保存</span></td></tr>
+<tr><th scope="row"><span class="ib">名簿と</span><span class="ib">会員ID</span></th><td class="old">手で打ち直す</td><td class="new"><span class="ib">登録と同時に</span><span class="ib">自動発行</span></td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:12px;font-size:13px;line-height:1.7;color:#3A3A37">※「いまの運営」は、LINEグループと手作業で運営しているチームを想定した例です。</p>
+</div>
+</section>
 
-    <!-- 02 ISSUE -->
-    <section class="issue cm-issue">
-      <div class="container">
-        <p class="eyebrow">よくある悩み</p>
-        <h2 class="sec-title reveal">ひとりで抱える、チーム運営の限界。</h2>
-        <div class="cm-issue-grid">
-          <div class="cm-issue-card reveal reveal-delay-1">
-            <h3 class="cm-card-title">LINEグループで出欠が流れる</h3>
-            <p class="cm-card-body">「参加します」が他の会話に埋もれて、結局ひとりずつ数え直すことになります。</p>
-          </div>
-          <div class="cm-issue-card reveal reveal-delay-2">
-            <h3 class="cm-card-title">直前キャンセルと繰り上げ連絡</h3>
-            <p class="cm-card-body">キャンセルが出るたびに、待機している人へ手作業で連絡していませんか。</p>
-          </div>
-          <div class="cm-issue-card reveal reveal-delay-3">
-            <h3 class="cm-card-title">誰が来ているのか分からない</h3>
-            <p class="cm-card-body">参加履歴が残らないため、常連の方もはじめての方も見分けがつきません。</p>
-          </div>
-          <div class="cm-issue-card reveal reveal-delay-4">
-            <h3 class="cm-card-title">運営がひとりに集中する</h3>
-            <p class="cm-card-body">告知、集計、当日の受付。すべてが主催者ひとりの負担になっています。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section style="background:#A9ACAA;border-top:1.5px solid #1C1C1A;border-bottom:1.5px solid #1C1C1A;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px 56px">
+<div style="flex:999 1 500px;min-width:0">
+<h2 style="font-weight:900;font-size:clamp(25px,3.5vw,40px);line-height:1.45"><span class="ib">練習1回が、</span><span class="ib">こう回ります。</span></h2>
+<p style="margin-top:12px;max-width:34em">メンバー登録から出欠の集計まで、起きる順に並べました。</p>
+<ol style="margin-top:34px">
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">1</span><span style="flex:1 1 auto;width:2px;background:#1C1C1A"></span></div>
+<div style="padding-bottom:28px;min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">はじめに</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">メンバー登録と会員ID</h3><p style="margin-top:4px;font-size:15.5px">登録フォームから申し込むと、名簿への追加と会員IDの発行まで自動。参加規約・免責事項・肖像権への同意も、申込時に取得して記録します。メンバー専用のオープンチャットにも、メニューから参加できます。</p></div>
+</li>
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">2</span><span style="flex:1 1 auto;width:2px;background:#1C1C1A"></span></div>
+<div style="padding-bottom:28px;min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">練習が決まったら</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">開催案内を配信</h3><p style="margin-top:4px;font-size:15.5px">LINEで一斉配信。参加者だけ、キャンセル待ちの方だけ、ランクごと、といった絞り込み配信もできます。</p></div>
+</li>
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">3</span><span style="flex:1 1 auto;width:2px;background:#1C1C1A"></span></div>
+<div style="padding-bottom:28px;min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">募集中</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">参加申込とキャンセル待ち</h3><p style="margin-top:4px;font-size:15.5px">参加はLINEからワンタップ。定員になると自動で締め切り、キャンセルが出たら待機中の方へ自動で繰り上げます。本人はメニューの「予約状況」で参加確定かキャンセル待ちかを確認でき、キャンセルも理由を選ぶだけで完了します。</p></div>
+</li>
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">4</span><span style="flex:1 1 auto;width:2px;background:#1C1C1A"></span></div>
+<div style="padding-bottom:28px;min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">前日</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">リマインド</h3><p style="margin-top:4px;font-size:15.5px">前日に、自動でリマインドが届きます。</p></div>
+</li>
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">5</span><span style="flex:1 1 auto;width:2px;background:#1C1C1A"></span></div>
+<div style="padding-bottom:28px;min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">当日</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">QRチェックイン</h3><p style="margin-top:4px;font-size:15.5px">会員証のQRコードをかざすだけ。受付名簿も点呼もいりません。出欠はその場で記録されます。</p></div>
+</li>
+<li style="display:flex;gap:18px">
+<div style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center"><span class="num" style="width:46px;height:46px;border-radius:50%;background:#1C1C1A;color:#fff;border:2px solid #1C1C1A;display:flex;align-items:center;justify-content:center;font-size:24px">6</span></div>
+<div style="min-width:0"><p class="hand" style="font-size:17px;line-height:1.5">終わったら</p><h3 style="font-weight:900;font-size:19px;line-height:1.5">出欠集計とランク</h3><p style="margin-top:4px;font-size:15.5px">誰が何回参加したかを自動で集計し、出席回数からランクを判定します。本人もメニューの「活動履歴」で累計参加回数とランクを確認できます。常連の方の把握にも、久しぶりの方への声かけにも使えます。</p></div>
+</li>
+</ol>
+</div>
+<div style="flex:1 1 280px;min-width:0;display:flex;flex-wrap:wrap;justify-content:center;gap:26px;padding-top:8px">
+<figure style="flex:0 1 260px;min-width:0;transform:rotate(-1.5deg)"><img src="assets/screen-apply.png" width="600" height="1210" loading="lazy" decoding="async" alt="LINEの参加申込画面。日程ごとに残り席数と申込ボタンが並び、残り1席の回は「残りわずか」と表示されている" style="display:block;width:100%;height:auto"><figcaption class="hand" style="margin-top:8px;text-align:center;font-size:16px;line-height:1.5">LINEからの参加申込</figcaption></figure>
+<figure style="flex:0 1 260px;min-width:0;transform:rotate(1.5deg)"><img src="assets/screen-pass.png" width="600" height="1210" loading="lazy" decoding="async" alt="LINEに表示された会員証。QRコードと名前、会員ID、ランクが並び、下に参加申込や会員証などのメニューがある" style="display:block;width:100%;height:auto"><figcaption class="hand" style="margin-top:8px;text-align:center;font-size:16px;line-height:1.5">会員証とメニュー</figcaption></figure>
+</div>
+</div>
+</section>
 
-    <!-- 03 SOLUTION -->
-    <section class="solution cm-solution">
-      <div class="container">
-        <p class="eyebrow">B-PASS COMMUNITYとは</p>
-        <h2 class="sec-title reveal">サムライシモンズを回している仕組み、そのまま。</h2>
-        <div class="cm-solution-body reveal">
-          <p>B-PASS COMMUNITYは、当社が自ら運営するバスケットボールチーム「サムライシモンズ」で実際に使っている運営システムです。112名が登録し、週1回の活動を続けている現場でそのまま動いているものを、チームごとにご提供します。</p>
-          <p>新しく作った仕組みではありません。毎週の運営に耐えられることが、すでに確かめられています。</p>
-        </div>
-        <div class="cm-photo reveal">
-          <img src="../assets/images/photo-samurai.jpg" alt="サムライシモンズの集合写真" width="1706" height="960" loading="lazy">
-        </div>
-      </div>
-    </section>
+<section style="padding-top:clamp(52px,7vw,92px);padding-bottom:clamp(52px,7vw,92px)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:44px 60px">
+<div style="flex:1 1 360px;min-width:0;padding:12px 12px 16px">
+<img src="assets/photo-group.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="体育館のコートに並んだサムライシモンズの集合写真" style="display:block;width:100%;height:auto;box-shadow:0 0 0 8px #fff,0 0 0 9.5px #1C1C1A;transform:rotate(-2deg)">
+<img src="assets/photo-play.jpg" width="960" height="640" loading="lazy" decoding="async" alt="体育館のゴール下でプレーする参加者たち" style="display:block;width:58%;height:auto;margin:22px 0 0 auto;box-shadow:0 0 0 7px #fff,0 0 0 8.5px #1C1C1A;transform:rotate(3deg)">
+</div>
+<div style="flex:1 1 400px;min-width:0">
+<p class="hand" style="font-size:20px;line-height:1.5;color:#20493E">サムライシモンズの場合</p>
+<h2 style="margin-top:6px;font-weight:900;font-size:clamp(25px,3.3vw,38px);line-height:1.45"><span class="ib">東大和で、毎週</span><span class="ib">動いている仕組みです。</span></h2>
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:22px">
+<div style="width:128px;height:128px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><span style="display:flex;align-items:baseline"><span class="num" style="font-size:48px">112</span><span style="font-weight:900;font-size:16px">名</span></span><span style="font-weight:700;font-size:13px;line-height:1.2">登録メンバー</span></div>
+<div style="width:128px;height:128px;border-radius:50%;background:#C5A55A;border:2px solid #1C1C1A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><span style="display:flex;align-items:baseline"><span style="font-weight:900;font-size:16px">週</span><span class="num" style="font-size:48px">2</span><span style="font-weight:900;font-size:16px">回</span></span><span style="font-weight:700;font-size:13px;line-height:1.2">活動頻度</span></div>
+</div>
+<p style="margin-top:22px">B-PASS COMMUNITYは、東京都東大和市のバスケットボールチーム「サムライシモンズ」の運営で使われている仕組みです。以前は参加者の確認も当日の受付も手作業でしたが、いまは告知から受付までが自動で回っています。</p>
+<p style="margin-top:12px">当社はこのチームの運営を支援しながら、現場で詰まったところを直して育ててきました。新しく作ったばかりの仕組みではありません。</p>
+<p style="margin-top:12px;font-size:13px;line-height:1.7;color:#3A3A37">※ 人数と頻度は2026年12月時点。</p>
+</div>
+</div>
+</section>
 
-    <!-- 04 FEATURES -->
-    <section class="features cm-features">
-      <div class="container">
-        <p class="eyebrow">できること</p>
-        <h2 class="sec-title reveal">運営の手作業を、6つまとめて自動化。</h2>
-        <div class="cm-feat-grid">
-          <div class="feat-card cm-feat-card reveal reveal-delay-1">
-            <h3 class="cm-card-title">メンバー名簿と会員ID</h3>
-            <p class="cm-card-body">登録フォームから申し込むだけで、名簿への追加と会員IDの発行が自動で完了します。名簿を手で打ち直す必要はありません。</p>
-          </div>
-          <div class="feat-card cm-feat-card reveal reveal-delay-2">
-            <h3 class="cm-card-title">参加申込とキャンセル待ち</h3>
-            <p class="cm-card-body">参加はLINEからワンタップ。定員に達すると自動で締め切り、キャンセルが出れば待機中の方へ自動で繰り上げます。</p>
-          </div>
-          <div class="feat-card cm-feat-card reveal reveal-delay-3">
-            <h3 class="cm-card-title">QRチェックイン</h3>
-            <p class="cm-card-body">当日は会員証のQRコードをかざすだけ。受付名簿も点呼も不要で、出欠がその場で記録されます。</p>
-          </div>
-          <div class="feat-card cm-feat-card reveal reveal-delay-4">
-            <h3 class="cm-card-title">LINE配信とリマインド</h3>
-            <p class="cm-card-body">開催案内を一斉配信できます。参加者だけ、未回答の方だけといった絞り込み配信や、前日の自動リマインドにも対応します。</p>
-          </div>
-          <div class="feat-card cm-feat-card reveal reveal-delay-5">
-            <h3 class="cm-card-title">出欠集計と参加スタッツ</h3>
-            <p class="cm-card-body">誰が何回参加したかが自動で集計されます。常連の方の把握にも、久しぶりの方への声かけにも使えます。</p>
-          </div>
-          <div class="feat-card cm-feat-card reveal reveal-delay-6">
-            <h3 class="cm-card-title">規約同意の記録</h3>
-            <p class="cm-card-body">参加規約、免責事項、肖像権への同意を申込時に取得し、記録として残します。規約のテンプレートは納品時にお渡しします。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section style="background:#fff;border-top:1.5px solid #1C1C1A;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px)">
+<div class="wrap">
+<h2 style="font-weight:900;font-size:clamp(25px,3.5vw,40px);line-height:1.45"><span class="ib">ご用意いただくのは、</span><span class="ib">LINE公式アカウントと、</span><span class="ib">無料のGoogleアカウント。</span></h2>
+<p style="margin-top:12px;max-width:38em">Googleアカウントは、管理用のスプレッドシートを開くために使います。お持ちのGmailで構いません。設定はすべて当社が行い、30分のオンライン説明のあと、最初の練習日から使えます。</p>
+<div style="overflow-x:auto;margin-top:30px">
+<table class="cmp" style="min-width:330px">
+<thead>
+<tr>
+<td style="width:30%;border-bottom:1px solid #C9C5B8"></td>
+<th scope="col" style="width:33%;background:#D5D4CE;font-weight:700">お客様</th>
+<th scope="col" style="width:37%;background:#20493E;color:#fff;font-weight:900">当社</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row"><span class="num" style="font-size:22px;margin-right:8px">1</span>お申し込み</th><td class="old"><span class="ib">フォームか</span><span class="ib">メールで連絡</span></td><td class="new"><span class="ib">チームの規模や</span><span class="ib">活動頻度を</span><span class="ib">伺います</span></td></tr>
+<tr><th scope="row"><span class="num" style="font-size:22px;margin-right:8px">2</span><span class="ib">アカウントの</span><span class="ib">ご用意</span></th><td class="old"><span class="ib">LINE公式</span><span class="ib">アカウントの</span><span class="ib">契約</span><br><span class="ib">Google</span><span class="ib">アカウント</span><span class="ib">（無料）</span></td><td class="new"><span class="ib">手順をご案内</span></td></tr>
+<tr><th scope="row"><span class="num" style="font-size:22px;margin-right:8px">3</span>環境構築</th><td class="old">作業なし<span class="hand" style="display:block;font-size:14.5px;color:#A8322D">ここは待つだけ</span></td><td class="new key"><span class="ib">システム設定・</span><span class="ib">フォーム作成・</span><span class="ib">LINE初期設定を</span><span class="ib">すべて代行</span></td></tr>
+<tr><th scope="row"><span class="num" style="font-size:22px;margin-right:8px">4</span>操作説明</th><td class="old"><span class="ib">オンラインで</span><span class="ib">30分・1回</span></td><td class="new"><span class="ib">操作マニュアルも</span><span class="ib">お渡し</span></td></tr>
+<tr><th scope="row"><span class="num" style="font-size:22px;margin-right:8px">5</span>運用開始</th><td class="old"><span class="ib">最初の練習日</span><span class="ib">から利用</span></td><td class="new"><span class="ib">ご不明点に</span><span class="ib">メールで対応</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 
-    <!-- 05 CASE STUDY -->
-    <section class="cm-case">
-      <div class="container">
-        <p class="eyebrow">導入事例</p>
-        <h2 class="sec-title reveal">東大和のバスケットボールチーム、サムライシモンズ。</h2>
-        <div class="cm-photo cm-case-photo reveal">
-          <img src="../assets/images/photo-samurai.jpg" alt="サムライシモンズの活動の様子" width="1706" height="960" loading="lazy">
-        </div>
-        <div class="cm-case-stats">
-          <div class="cm-case-stat reveal reveal-delay-1">
-            <p class="cm-case-num">112名</p>
-            <p class="cm-case-label">登録メンバー</p>
-          </div>
-          <div class="cm-case-stat reveal reveal-delay-2">
-            <p class="cm-case-num">週1回</p>
-            <p class="cm-case-label">活動頻度</p>
-          </div>
-          <div class="cm-case-stat reveal reveal-delay-3">
-            <p class="cm-case-num">東大和市</p>
-            <p class="cm-case-label">活動拠点</p>
-          </div>
-        </div>
-        <div class="cm-case-body reveal">
-          <p>東京都東大和市を拠点に、週1回の活動を続けているバスケットボールチームです。登録メンバーは112名。</p>
-          <p>以前は参加者の確認も当日の受付もすべて手作業でしたが、B-PASSの導入後は告知から受付までが自動で回るようになりました。</p>
-          <p>運営しているのは、B-PASSを開発しているブルドン合同会社です。自分たちで毎週使い、詰まったところを直しながら育ててきた仕組みをお渡しします。</p>
-        </div>
-      </div>
-    </section>
+<section id="price" style="background:#EDE6D3;border-top:1.5px solid #1C1C1A;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px)">
+<div class="wrap">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
+<h2 style="font-weight:900;font-size:clamp(25px,3.5vw,40px);line-height:1.45"><span class="ib">月額5,500円。</span><span class="ib">初期費用はかかりません。</span></h2>
+<p style="background:#fff;border:2px solid #A8322D;padding:4px;transform:rotate(-2deg)"><span style="display:block;border-top:2px dotted #A8322D;border-bottom:2px dotted #A8322D;padding:3px 14px;color:#A8322D;font-weight:900;font-size:15px;line-height:1.6">先着5チーム限定でご提供中</span></p>
+</div>
+<div class="eq">
+<div class="eqp">
+<p style="background:#C5A55A;border-bottom:2px solid #1C1C1A;text-align:center;font-weight:900;font-size:15px;padding:6px 8px">初期費用</p>
+<p style="text-align:center;padding:20px 8px 2px"><span class="num" style="font-size:clamp(58px,7vw,76px)">0</span><span style="font-weight:900;font-size:20px">円</span></p>
+<p style="text-align:center;font-size:13.5px;font-weight:700;padding:0 8px 18px">環境構築の代行こみ</p>
+</div>
+<span aria-hidden="true" class="num" style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#20493E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;padding-bottom:4px">+</span>
+<div class="eqp">
+<p style="background:#20493E;color:#fff;border-bottom:2px solid #1C1C1A;text-align:center;font-weight:900;font-size:15px;padding:6px 8px">初月</p>
+<p style="text-align:center;padding:20px 8px 2px"><span class="num" style="font-size:clamp(58px,7vw,76px)">0</span><span style="font-weight:900;font-size:20px">円</span></p>
+<p style="text-align:center;font-size:13.5px;font-weight:700;padding:0 8px 18px">ご利用開始から1か月間</p>
+</div>
+<span aria-hidden="true" class="num" style="flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#20493E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;padding-bottom:4px">+</span>
+<div class="eqp">
+<p style="background:#C5A55A;border-bottom:2px solid #1C1C1A;text-align:center;font-weight:900;font-size:15px;padding:6px 8px">月額（全機能こみ）</p>
+<p style="text-align:center;padding:20px 8px 2px"><span class="num" style="font-size:clamp(58px,7vw,76px)">5,500</span><span style="font-weight:900;font-size:20px">円</span></p>
+<p style="text-align:center;font-size:13.5px;font-weight:700;padding:0 8px 18px">税込（税抜5,000円）・最低利用期間なし</p>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:36px 56px;margin-top:44px">
+<div style="flex:1 1 360px;min-width:0">
+<h3 style="font-weight:900;font-size:19px;line-height:1.5;border-bottom:2px solid #1C1C1A;padding-bottom:8px">月額に含まれるもの</h3>
+<ul style="margin-top:6px">
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>システムのご利用（全機能）</span></li>
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>環境構築の代行</span></li>
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>参加規約テンプレート・事故報告フォーム</span></li>
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>オンライン操作説明（1回）</span></li>
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>メールでのお問い合わせ対応</span></li>
+<li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #C9C5B8"><svg viewBox="0 0 20 20" aria-hidden="true" style="flex:0 0 20px;height:20px;margin-top:5px"><path d="M3 10 L8 15 L17 5" fill="none" stroke="#20493E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>システムの保守・障害対応</span></li>
+</ul>
+</div>
+<div style="flex:1 1 380px;min-width:0;background:#fff;border:2px solid #1C1C1A;box-shadow:6px 6px 0 -2px #EDE6D3,6px 6px 0 0 #1C1C1A;padding:20px clamp(16px,2.6vw,26px) 22px">
+<h3 style="font-weight:900;font-size:19px;line-height:1.5">別にかかることがある費用</h3>
+<p style="margin-top:4px;font-size:15px">LINE公式アカウントはお客様名義のご契約のため、当社の月額には含まれません。配信する通数でプランが決まります。</p>
+<table style="margin-top:14px">
+<tbody>
+<tr><th scope="row" style="text-align:left;font-weight:700;font-size:15px;padding:10px 6px 10px 0;border-top:1px solid #1C1C1A;border-bottom:1px solid #C9C5B8;line-height:1.5">コミュニケーションプラン<br><span style="font-weight:500;font-size:13px">月200通まで</span></th><td style="text-align:right;white-space:nowrap;padding:10px 0;border-top:1px solid #1C1C1A;border-bottom:1px solid #C9C5B8"><span class="num" style="font-size:32px">0</span><span style="font-weight:900;font-size:14px">円</span><span aria-hidden="true" style="visibility:hidden;font-weight:700;font-size:12.5px">（税込）</span></td></tr>
+<tr><th scope="row" style="text-align:left;font-weight:700;font-size:15px;padding:10px 6px 10px 0;border-bottom:1px solid #1C1C1A;line-height:1.5">ライトプラン<br><span style="font-weight:500;font-size:13px">月5,000通まで</span></th><td style="text-align:right;white-space:nowrap;padding:10px 0;border-bottom:1px solid #1C1C1A"><span class="num" style="font-size:32px">5,500</span><span style="font-weight:900;font-size:14px">円</span><span style="font-weight:700;font-size:12.5px">（税込）</span></td></tr>
+</tbody>
+</table>
+<p class="hand" style="margin-top:14px;font-size:18px;line-height:1.6;color:#A8322D">数え方の例：50人に月4回配信すると200通</p>
+<p style="margin-top:8px;font-size:15px;font-weight:700">合計は、LINEが無料プランなら月5,500円、ライトプランなら月11,000円です（いずれも税込）。</p>
+<p style="margin-top:10px;font-size:13px;line-height:1.7;color:#3A3A37">※ LINE公式アカウントの料金は、LINEヤフー社の公表内容（2026年11月時点）です。</p>
+</div>
+</div>
+<div style="margin-top:48px;background:#F7F4EC;border:1.5px solid #1C1C1A">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;background:#1C1C1A;color:#fff;padding:9px 16px">
+<h3 style="font-weight:900;font-size:17px;line-height:1.5;letter-spacing:.08em">必ずご確認ください</h3>
+<span style="font-weight:700;font-size:14px;border-left:1px solid #fff;padding-left:16px">お申し込み前の注意事項</span>
+<span style="background:#A8322D;color:#fff;font-weight:700;font-size:13px;padding:2px 10px">LINE公式アカウントはお客様名義です</span>
+</div>
+<ul style="columns:3 250px;column-gap:30px;column-rule:1px solid #1C1C1A;padding:16px clamp(14px,2.4vw,22px);font-size:14px;line-height:1.75">
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em;color:#A8322D;font-weight:700">●配信通数が無料枠を超える場合、LINE公式アカウントの有料プラン料金はお客様のご負担となります。</li>
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em">●現在は先着5チーム限定でのご提供です。</li>
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em">●ご利用開始日から1か月間は、月額利用料が無料です。無料期間中に解約された場合、料金は発生しません。</li>
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em">●解約は月単位です。毎月20日までのお申し出で、その月の末日をもって解約となります。最低利用期間はありません。</li>
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em">●対象は、バスケットボールのチーム・サークルです。他競技への対応は検討中です。</li>
+<li style="break-inside:avoid;margin-bottom:8px;padding-left:1em;text-indent:-1em">●表示価格はすべて税込です。</li>
+</ul>
+</div>
+</div>
+</section>
 
-    <!-- 06 導入の流れ -->
-    <section class="cm-flow">
-      <div class="container">
-        <p class="eyebrow">導入の流れ</p>
-        <h2 class="sec-title reveal">5ステップ、技術的な作業はゼロ。</h2>
-        <ol class="cm-steps">
-          <li class="cm-step reveal">
-            <p class="cm-step-num">STEP 01</p>
-            <div>
-              <h3 class="cm-card-title">お申し込み</h3>
-              <p class="cm-card-body">フォームまたはメールでご連絡ください。チームの規模や活動頻度をお伺いします。</p>
-            </div>
-          </li>
-          <li class="cm-step reveal">
-            <p class="cm-step-num">STEP 02</p>
-            <div>
-              <h3 class="cm-card-title">LINE公式アカウントのご契約</h3>
-              <p class="cm-card-body">チーム専用のLINE公式アカウントをお客様名義でご契約いただきます。無料プランから始められます。手順は当社でご案内します。</p>
-            </div>
-          </li>
-          <li class="cm-step reveal">
-            <p class="cm-step-num">STEP 03</p>
-            <div>
-              <h3 class="cm-card-title">環境構築（当社が代行）</h3>
-              <p class="cm-card-body">システムの設定、申込フォームの作成、LINEの初期設定まで、すべて当社で行います。お客様側の作業はありません。</p>
-            </div>
-          </li>
-          <li class="cm-step reveal">
-            <p class="cm-step-num">STEP 04</p>
-            <div>
-              <h3 class="cm-card-title">オンラインでの操作説明</h3>
-              <p class="cm-card-body">30分のオンライン説明を1回行います。操作マニュアルもお渡しします。</p>
-            </div>
-          </li>
-          <li class="cm-step reveal">
-            <p class="cm-step-num">STEP 05</p>
-            <div>
-              <h3 class="cm-card-title">運用開始</h3>
-              <p class="cm-card-body">最初の練習日から使い始められます。ご不明な点はメールでご相談ください。</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+<section style="border-top:1.5px solid #1C1C1A;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px)">
+<div class="wrap">
+<div style="display:inline-block;transform:rotate(-2.5deg);transform-origin:left bottom;max-width:100%">
+<h2 class="hand" style="font-size:clamp(26px,4.3vw,46px);line-height:1.3">よく聞かれること。</h2>
+<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:12px;margin-top:4px"><path d="M3 8 C60 3 120 12 182 6 S270 5 297 9" fill="none" stroke="#C5A55A" stroke-width="3.5" stroke-linecap="round"></path></svg>
+</div>
+<dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));column-gap:48px;margin-top:30px">
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">初月無料とは、どこまで無料ですか。</dt><dd style="margin-top:6px;font-size:15.5px">ご利用開始日から1か月間、月額利用料が無料になります。環境構築も含めて費用は発生しません。無料期間中に解約された場合も料金はかかりません。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">参加するメンバーに、</span><span class="ib">費用やアプリは必要ですか。</span></dt><dd style="margin-top:6px;font-size:15.5px">いりません。メンバーの方は、チームのLINE公式アカウントを友だち追加するだけで使えます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">パソコンやITに詳しくないのですが、</span><span class="ib">大丈夫でしょうか。</span></dt><dd style="margin-top:6px;font-size:15.5px">環境の構築はすべて当社が行います。日常の操作はLINEとスプレッドシートのみで、特別な知識は必要ありません。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">Googleの契約は必要ですか。</dt><dd style="margin-top:6px;font-size:15.5px">有料の契約はいりません。管理用のスプレッドシートを開くために、無料のGoogleアカウントをひとつご用意ください。お持ちのGmailで構いません。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">運営者が複数人でも使えますか。</dt><dd style="margin-top:6px;font-size:15.5px">使えます。管理用のスプレッドシートを、運営者それぞれのGoogleアカウントに共有してお使いいただけます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">開催日や定員は、</span><span class="ib">どうやって決めますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">開催日ごとに、場所・時間・定員を設定できます。会場や人数が回によって変わるチームでもお使いいただけます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">当日の受付には何が必要ですか。</dt><dd style="margin-top:6px;font-size:15.5px">受付用のスマートフォンが1台あれば足ります。スキャナーアプリで会員証のQRコードを読み取り、出欠はその場で記録されます。電波が届かない会場でも受付できます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">写真の掲載可否は、</span><span class="ib">回ごとに確認できますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">できます。申込のたびに、参加規約への同意と写真掲載の可否を選んでいただき、記録として残します。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">LINEを使っていないメンバーにも</span><span class="ib">連絡できますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">できます。一斉送信はLINEとメールのどちらでも送れます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">メンバーは何人まで登録できますか。</dt><dd style="margin-top:6px;font-size:15.5px">登録人数に制限はありません。ただし配信通数が増えた場合、LINE公式アカウントの有料プランへの切り替えが必要になることがあります。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">今のLINEグループや名簿から、</span><span class="ib">そのまま移行できますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">既存の名簿の取り込みには対応していません。会員IDの発行や規約への同意に必要な情報が揃わないため、メンバーの方に登録フォームから登録し直していただきます。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">メンバーの個人情報は、</span><span class="ib">どこに保存されますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">当社が管理するGoogle Workspace上のスプレッドシートに保存し、共有を受けた運営者の方だけが閲覧できます。なお、システムの保守や不具合の修正のために、当社が内容を確認することがあります。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">参加費の集金もできますか。</dt><dd style="margin-top:6px;font-size:15.5px">現在、集金の機能はありません。参加費は、これまでどおりの方法でお受け取りください。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6"><span class="ib">バスケットボール以外の競技でも</span><span class="ib">使えますか。</span></dt><dd style="margin-top:6px;font-size:15.5px">現在はバスケットボールのチームのみを対象としています。他競技への対応は検討中です。</dd></div></div>
+<div style="display:flex;gap:14px;border-top:1.5px solid #1C1C1A;padding:18px 0 20px"><span class="hand" aria-hidden="true" style="flex:0 0 auto;font-size:32px;line-height:1.1;color:#20493E">Q</span><div style="min-width:0"><dt style="font-weight:900;font-size:17px;line-height:1.6">解約はいつでもできますか。</dt><dd style="margin-top:6px;font-size:15.5px">月単位で解約いただけます。毎月20日までにお申し出いただくと、その月の末日で解約となります。最低利用期間はありません。</dd></div></div>
+</dl>
+</div>
+</section>
 
-    <!-- 07 料金 -->
-    <section class="plan cm-price">
-      <div class="container">
-        <p class="eyebrow">料金</p>
-        <h2 class="sec-title reveal">初月無料、そのあと月額5,000円。</h2>
-        <div class="cm-price-card reveal">
-          <p class="cm-price-badge">先着5チーム限定</p>
-          <dl class="cm-price-list">
-            <div class="cm-price-row cm-price-row--main">
-              <dt>初月</dt>
-              <dd>0円</dd>
-            </div>
-            <div class="cm-price-row cm-price-row--main">
-              <dt>2か月目以降</dt>
-              <dd>月額 5,000円（税別）</dd>
-            </div>
-            <div class="cm-price-row">
-              <dt>初期費用</dt>
-              <dd>0円</dd>
-            </div>
-            <div class="cm-price-row">
-              <dt>最低利用期間</dt>
-              <dd>なし</dd>
-            </div>
-          </dl>
-          <ul class="cm-price-includes">
-            <li>システムのご利用（全機能）</li>
-            <li>環境構築の代行</li>
-            <li>参加規約テンプレート・事故報告フォーム</li>
-            <li>オンライン操作説明（1回）</li>
-            <li>メールでのお問い合わせ対応</li>
-            <li>システムの保守・障害対応</li>
-          </ul>
-          <p class="cm-price-note">ご利用開始日から1か月間、月額利用料は無料です。無料期間中に解約された場合、料金は一切発生しません。表示価格は税別です。LINE公式アカウントのご契約料金は含まれません。</p>
-        </div>
-      </div>
-    </section>
+<section id="contact" style="background:#20493E;color:#fff;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:36px 60px">
+<div style="flex:1 1 360px;min-width:0">
+<svg viewBox="0 0 170 120" aria-hidden="true" style="display:block;width:120px;height:auto;overflow:visible;margin-bottom:14px">
+<path d="M24 70 C6 96 30 116 52 104" fill="none" stroke="#E8D5A3" stroke-width="4" stroke-linecap="round"></path>
+<path d="M70 30 H140 A8 8 0 0 1 148 38 V54 A8 8 0 0 1 140 62 H96" fill="#C5A55A" stroke="#1C1C1A" stroke-width="3" stroke-linejoin="round"></path>
+<circle cx="70" cy="68" r="38" fill="#C5A55A" stroke="#1C1C1A" stroke-width="3"></circle>
+<rect x="86" y="30" width="24" height="12" fill="#1C1C1A"></rect>
+<circle cx="70" cy="68" r="11" fill="#1C1C1A"></circle>
+<circle cx="24" cy="62" r="9" fill="none" stroke="#1C1C1A" stroke-width="3"></circle>
+<path d="M150 14 L162 2 M158 30 L168 26" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"></path>
+</svg>
+<h2 style="font-weight:900;font-size:clamp(25px,3.5vw,40px);line-height:1.45"><span class="ib">まずは、チームのことを</span><span class="ib">聞かせてください。</span></h2>
+<p style="margin-top:14px;max-width:30em;color:#E6EEEA">導入のご相談とお見積りは無料です。3営業日以内にメールでお返事します。</p>
+<p class="hand" style="margin-top:22px;font-size:20px;line-height:1.6;color:#E8D5A3;transform:rotate(-2deg);transform-origin:left bottom"><span class="ib">人数や頻度が決まっていなくても</span><span class="ib">大丈夫です。</span></p>
+<dl style="display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:30px;padding-top:18px;border-top:1px solid #E8D5A3">
+<div><dt style="font-weight:700;font-size:14px;line-height:1.4;color:#E6EEEA">初期費用</dt><dd style="color:#E8D5A3"><span class="num" style="font-size:38px">0</span><span style="font-weight:900;font-size:15px">円</span></dd></div>
+<div><dt style="font-weight:700;font-size:14px;line-height:1.4;color:#E6EEEA">初月</dt><dd style="color:#E8D5A3"><span class="num" style="font-size:38px">0</span><span style="font-weight:900;font-size:15px">円</span></dd></div>
+<div><dt style="font-weight:700;font-size:14px;line-height:1.4;color:#E6EEEA">月額</dt><dd style="color:#E8D5A3"><span class="num" style="font-size:38px">5,500</span><span style="font-weight:900;font-size:15px">円</span><span style="font-weight:700;font-size:12.5px">（税込）</span></dd></div>
+</dl>
+</div>
+<form id="contact-form" novalidate style="position:relative;flex:1 1 400px;min-width:0;background:#F7F4EC;color:#1C1C1A;border:2px solid #1C1C1A;box-shadow:6px 6px 0 #15332B;padding:clamp(18px,3vw,30px);display:flex;flex-direction:column;gap:16px">
+<div><label for="f-name" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-bottom:4px">お名前<span style="background:#A8322D;color:#fff;font-size:12px;font-weight:700;line-height:1.5;padding:0 6px">必須</span></label><input id="f-name" name="name" required class="field" type="text" autocomplete="name"></div>
+<div><label for="f-mail" style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-bottom:4px">メールアドレス<span style="background:#A8322D;color:#fff;font-size:12px;font-weight:700;line-height:1.5;padding:0 6px">必須</span></label><input id="f-mail" name="email" required class="field" type="email" autocomplete="email"></div>
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<div style="flex:1 1 170px;min-width:0"><label for="f-team" style="display:block;font-weight:700;font-size:15px;margin-bottom:4px">チーム名</label><input id="f-team" name="team" class="field" type="text"></div>
+<div style="flex:1 1 170px;min-width:0"><label for="f-area" style="display:block;font-weight:700;font-size:15px;margin-bottom:4px">活動地域</label><input id="f-area" name="area" class="field" type="text"></div>
+</div>
+<div><label for="f-size" style="display:block;font-weight:700;font-size:15px;margin-bottom:4px">おおよそのメンバー数</label><select id="f-size" name="members" class="field"><option value="">選んでください</option><option>〜20名</option><option>21〜50名</option><option>51〜100名</option><option>101名以上</option><option>まだ分からない</option></select></div>
+<div><label for="f-msg" style="display:block;font-weight:700;font-size:15px;margin-bottom:4px">ご相談内容</label><textarea id="f-msg" name="message" class="field" rows="4" style="resize:vertical"></textarea></div>
+<input type="text" name="homepage" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<button type="submit" style="min-height:56px;background:#C5A55A;color:#1C1C1A;font:inherit;font-weight:900;font-size:17px;border:2px solid #1C1C1A;border-radius:3px;box-shadow:3px 3px 0 #1C1C1A;cursor:pointer">この内容で相談する</button>
+<p style="font-size:13px;line-height:1.7;color:#3A3A37">送信内容は<a href="../privacy.html" style="color:#1C1C1A">プライバシーポリシー</a>に沿って取り扱います。</p>
+<p id="form-status" role="status" aria-live="polite" style="font-size:14px;font-weight:700;line-height:1.7;margin:0"></p>
+</form>
+</div>
+</section>
 
-    <!-- 08 対象・条件 -->
-    <section class="cm-target">
-      <div class="container">
-        <p class="eyebrow">対象と条件</p>
-        <h2 class="sec-title reveal">必要なものは、LINE公式アカウントだけ。</h2>
-        <div class="cm-target-grid">
-          <div class="cm-target-col reveal reveal-delay-1">
-            <h3 class="cm-card-title">こんなチームに</h3>
-            <ul class="cm-check-list">
-              <li>バスケットボールのチーム・サークル</li>
-              <li>週1回など、定期的に活動している</li>
-              <li>参加者が毎回入れ替わる</li>
-              <li>運営が主催者ひとりに集中している</li>
-            </ul>
-          </div>
-          <div class="cm-target-col reveal reveal-delay-2">
-            <h3 class="cm-card-title">ご用意いただくもの</h3>
-            <ul class="cm-check-list">
-              <li>LINE公式アカウントのご契約（お客様名義・無料プランから開始できます）</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cm-diff reveal">
-          <p class="cm-diff-lead">Google Workspaceの契約は不要です。</p>
-          <p class="cm-diff-body">法人向けプランとは異なり、お客様側で特別なIT環境をご用意いただく必要はありません。</p>
-        </div>
-        <p class="cm-target-note">メンバーが増えて配信通数が上限を超えた場合、LINE公式アカウントの有料プラン（月額5,500円〜）への切り替えが必要になります。この費用はお客様のご負担となります。</p>
-      </div>
-    </section>
+<footer class="on-dark" style="background:#15332B;color:#fff;padding-top:36px;padding-bottom:36px">
+<div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 48px">
+<div style="font-size:14px;line-height:1.9">
+<img src="assets/logo-community.png" width="919" height="264" loading="lazy" alt="B-PASS Community" style="display:block;height:58px;width:auto;margin:0 0 12px">
+<p>ブルドン合同会社</p>
+<p>〒187-0004 東京都小平市天神町1丁目4番38号-2</p>
+<p><a href="mailto:info@bull-don.com" style="color:#E8D5A3">info@bull-don.com</a></p>
+</div>
+<nav aria-label="フッター" style="display:flex;flex-direction:column;gap:2px;font-size:14px">
+<a href="https://lp.bull-don.com/" style="color:#fff;display:inline-flex;align-items:center;min-height:36px">法人向けB-PASS</a>
+<a href="https://www.bull-don.com/" style="color:#fff;display:inline-flex;align-items:center;min-height:36px">会社概要</a>
+<a href="../privacy.html" style="color:#fff;display:inline-flex;align-items:center;min-height:36px">プライバシーポリシー</a>
+<a href="https://www.bull-don.com/scta#community" style="color:#fff;display:inline-flex;align-items:center;min-height:36px">特定商取引法に基づく表記</a>
+</nav>
+</div>
+</footer>
 
-    <!-- 09 FAQ（eyebrow・sec-title は v6-A 3-3） -->
-    <section class="faq cm-faq">
-      <div class="container">
-        <p class="eyebrow">よくある質問</p>
-        <h2 class="sec-title reveal">導入前に、よく聞かれること。</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <p class="faq-q">初月無料とは、どこまで無料ですか。</p>
-            <p class="faq-a">ご利用開始日から1か月間、月額利用料が無料になります。環境構築も含めて費用は発生しません。無料期間中に解約された場合も料金はかかりません。</p>
-          </div>
-          <div class="faq-item">
-            <p class="faq-q">バスケットボール以外の競技でも使えますか。</p>
-            <p class="faq-a">現在はバスケットボールのチームのみを対象としています。他競技への対応は検討中です。</p>
-          </div>
-          <div class="faq-item">
-            <p class="faq-q">パソコンやITに詳しくないのですが、大丈夫でしょうか。</p>
-            <p class="faq-a">環境の構築はすべて当社が行います。日常の操作はLINEとスプレッドシートのみで、特別な知識は必要ありません。</p>
-          </div>
-          <div class="faq-item">
-            <p class="faq-q">Google Workspaceの契約は必要ですか。</p>
-            <p class="faq-a">不要です。ご用意いただくのはLINE公式アカウントのみです。</p>
-          </div>
-          <div class="faq-item">
-            <p class="faq-q">メンバーは何人まで登録できますか。</p>
-            <p class="faq-a">登録人数に制限はありません。ただし配信通数が増えた場合、LINE公式アカウントの有料プランへの切り替えが必要になることがあります。</p>
-          </div>
-          <div class="faq-item">
-            <p class="faq-q">解約はいつでもできますか。</p>
-            <p class="faq-a">月単位で解約いただけます。次回決済日の前日までにお申し出ください。最低利用期間はありません。</p>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <!-- 10 CTA / FORM -->
-    <section class="cta-final cm-cta" id="contact">
-      <div class="container">
-        <h2 class="cta-final-h2">まずは、チームのことを聞かせてください。</h2>
-        <p class="cta-final-sub cm-cta-sub">先着5チーム限定でご提供しています。初月は無料です。導入のご相談やお見積りは無料です。</p>
-        <form class="form" id="communityForm" novalidate>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-name">お名前（必須）</label>
-            <input class="form-input" type="text" id="cm-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-email">メールアドレス（必須）</label>
-            <input class="form-input" type="email" id="cm-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-team">チーム名</label>
-            <input class="form-input" type="text" id="cm-team" name="team">
-          </div>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-area">活動地域</label>
-            <input class="form-input" type="text" id="cm-area" name="area">
-          </div>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-members">おおよそのメンバー数</label>
-            <input class="form-input" type="text" id="cm-members" name="members">
-          </div>
-          <div class="form-group">
-            <label class="form-label cm-form-label" for="cm-message">ご相談内容</label>
-            <textarea class="form-input cm-textarea" id="cm-message" name="message" rows="5"></textarea>
-          </div>
-          <button class="btn-submit" type="submit" id="cmSubmit">送信する</button>
-        </form>
-        <div class="cm-form-status" id="cmSuccess" role="status" hidden>
-          <p>お問い合わせありがとうございます。担当者より3営業日以内にご連絡いたします。</p>
-        </div>
-        <div class="cm-form-status" id="cmPending" role="alert" hidden>
-          <p>申し訳ありません。送信できませんでした。お手数ですが info@bull-don.com までメールにてお問い合わせください。</p>
-        </div>
-      </div>
-    </section>
+<script>
+/* ===== GA4：流入チャネル別イベント =====
+   現行（法人版と共通の ../assets/js/form.js）と同じく、?src= 付きの訪問で campaign_visit を送る。
+   email_visit（?lid=）は、このページに lead_id の欄が無いため送らない（現行も送っていない）。 */
+(function () {
+  var src = new URLSearchParams(window.location.search).get('src') || '';
+  if (typeof gtag === 'function' && src) {
+    gtag('event', 'campaign_visit', { campaign_id: src });
+  }
+})();
 
-  </main>
-
-  <!-- 11 FOOTER -->
-  <footer class="footer cm-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img src="../assets/images/logo-white.png" alt="B-PASS" class="footer-logo-img cm-footer-logo">
-        <p class="footer-company cm-footer-company">ブルドン合同会社</p>
-        <p class="cm-footer-address">〒187-0004 東京都小平市天神町1丁目4番38号-2</p>
-        <p class="cm-footer-address"><a class="cm-footer-mail" href="mailto:info@bull-don.com">info@bull-don.com</a></p>
-      </div>
-      <nav class="footer-nav cm-footer-nav" aria-label="フッター">
-        <a href="https://lp.bull-don.com/">法人向けB-PASS</a>
-        <a href="https://www.bull-don.com/" target="_blank" rel="noopener">会社概要</a>
-        <a href="../privacy.html">プライバシーポリシー</a>
-        <a href="https://www.bull-don.com/scta#community" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="../assets/js/form.js"></script>
-  <script src="./community.js"></script>
+/* ===== フォーム送信 =====
+   送信方式：text/plain の POST（プリフライトなし）で JSON を送り、応答の JSON を読んで {"ok":true} のときだけ成功とする。
+   応答が読めない・ok が true でない場合はすべて失敗として扱う（fail-closed）。
+   mode:'no-cors' は応答を読めず失敗を検知できないため使わない。
+   項目名は受付側に合わせる（スパム対策の隠し項目は homepage）。隠し項目に空白以外の値があるときは送らず、失敗の表示を出す（黙って止めない）。
+   generate_lead は {"ok":true} を受け取ったときだけ送る。 */
+(function () {
+  var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx5WiXv6qiS-26p1Sx55eH2v5JQ8j4cu5JfIPKNUTlNy4cd-Rpnam8X3m59h-KhK8b0uw/exec';
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = ''; status.style.color = '';
+    if (form.homepage.value.trim() !== '') {
+      status.textContent = '送信できませんでした。時間をおいて再度お試しいただくか、info@bull-don.com までご連絡ください。'; status.style.color = '#A8322D'; return;
+    }
+    if (!form.name.value.trim() || !form.email.value.trim()) {
+      status.textContent = 'お名前とメールアドレスを入力してください。'; status.style.color = '#A8322D'; return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) {
+      status.textContent = 'メールアドレスの形式を確認してください。'; status.style.color = '#A8322D'; return;
+    }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = '送信しています…';
+    var payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      team: form.team.value.trim(),
+      area: form.area.value.trim(),
+      members: form.members.value.trim(),
+      message: form.message.value.trim(),
+      homepage: form.homepage.value
+    };
+    var ok = false;
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          ok = res.ok && data !== null && typeof data === 'object' && data.ok === true;
+        });
+      })
+      .catch(function () { ok = false; })
+      .then(function () {
+        btn.disabled = false; btn.textContent = 'この内容で相談する';
+        if (ok) {
+          form.reset();
+          status.textContent = '送信しました。3営業日以内にメールでお返事します。'; status.style.color = '#20493E';
+          if (window.gtag) gtag('event', 'generate_lead', { form: 'community_contact' });
+        } else {
+          status.textContent = '送信できませんでした。時間をおいて再度お試しいただくか、info@bull-don.com までご連絡ください。'; status.style.color = '#A8322D';
+        }
+      });
+  });
+})();
+</script>
 </body>
 </html>
